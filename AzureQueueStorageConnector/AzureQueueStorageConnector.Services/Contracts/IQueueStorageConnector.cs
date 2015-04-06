@@ -4,7 +4,7 @@ namespace AzureQueueStorageConnector.Services.Contracts
 {
     public interface IQueueStorageConnector
     {
-        MessageDescription ReadMessage();
+        MessageDescription ReadMessage(string triggerState);
         void SendMessage(MessageDescription messageDescription);
     }
 }

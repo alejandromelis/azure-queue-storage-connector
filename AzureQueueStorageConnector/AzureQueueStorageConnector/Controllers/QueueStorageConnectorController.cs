@@ -28,7 +28,7 @@ namespace AzureQueueStorageConnector.Controllers
         [HttpGet]
         public MessageDescription GetMessage(string triggerState)
         {
-            return _queueStorageConnector.ReadMessage();
+            return _queueStorageConnector.ReadMessage(triggerState);
         }
 
         /// <summary>
