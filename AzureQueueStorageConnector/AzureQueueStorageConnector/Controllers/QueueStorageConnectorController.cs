@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using AzureQueueStorageConnector.Services.Contracts;
 using AzureQueueStorageConnector.Services.Models;
 
 namespace AzureQueueStorageConnector.Controllers
@@ -8,6 +9,13 @@ namespace AzureQueueStorageConnector.Controllers
     /// </summary>
     public class QueueStorageConnectorController : ApiController
     {
+        private readonly IQueueStorageConnector _queueStorageConnector;
+
+        public QueueStorageConnectorController(IQueueStorageConnector queueStorageConnector)
+        {
+            _queueStorageConnector = queueStorageConnector;
+        }
+
         /// <summary>
         /// Message Available
         /// </summary>
@@ -20,7 +28,7 @@ namespace AzureQueueStorageConnector.Controllers
         [HttpGet]
         public MessageDescription GetMessage(string triggerState)
         {
-            return new MessageDescription {  };
+            return _queueStorageConnector.ReadMessage();
         }
 
         /// <summary>
@@ -35,6 +43,7 @@ namespace AzureQueueStorageConnector.Controllers
         [HttpPost]
         public void SendMessage([FromBody]MessageDescription queueMessage)
         {
+            _queueStorageConnector.SendMessage(queueMessage);
         }
     }
 }

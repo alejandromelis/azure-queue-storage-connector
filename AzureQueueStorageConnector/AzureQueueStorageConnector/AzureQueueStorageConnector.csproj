@@ -46,6 +46,18 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleInjector">
+      <HintPath>..\packages\SimpleInjector.2.7.3\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Diagnostics">
+      <HintPath>..\packages\SimpleInjector.2.7.3\lib\net45\SimpleInjector.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Extensions.ExecutionContextScoping">
+      <HintPath>..\packages\SimpleInjector.Extensions.ExecutionContextScoping.2.7.3\lib\net45\SimpleInjector.Extensions.ExecutionContextScoping.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.WebApi">
+      <HintPath>..\packages\SimpleInjector.Integration.WebApi.2.7.3\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="Swashbuckle.Core">
       <HintPath>..\packages\Swashbuckle.Core.5.0.0\lib\net40\Swashbuckle.Core.dll</HintPath>
     </Reference>
@@ -102,6 +114,7 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\DependencyInjectionConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\QueueStorageConnectorController.cs" />
