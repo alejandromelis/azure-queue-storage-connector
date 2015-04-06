@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AzureQueueStorageConnector</name>
+    </assembly>
+    <members>
+        <member name="T:AzureQueueStorageConnector.Controllers.QueueStorageConnectorController">
+            <summary>
+            Azure Queue Storage Connector API App
+            </summary>
+        </member>
+        <member name="M:AzureQueueStorageConnector.Controllers.QueueStorageConnectorController.GetMessage(System.String)">
+            <summary>
+            Message Available
+            </summary>
+            <remarks>
+            Receive message from Azure Queue Storage
+            </remarks>
+            <param name="triggerState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AzureQueueStorageConnector.Controllers.QueueStorageConnectorController.SendMessage(AzureQueueStorageConnector.Services.Models.MessageDescription)">
+            <summary>
+            Send a message
+            </summary>
+            <remarks>
+            Send a message to Azure Queue Storage
+            </remarks>
+            <param name="queueMessage">Required. This is the object of type
+             MessageDescription which is sent to the Azure Queue Storage.</param>
+        </member>
+    </members>
+</doc>
